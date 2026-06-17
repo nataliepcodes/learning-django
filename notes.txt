@@ -1,20 +1,20 @@
 # Official Documentation: https://docs.djangoproject.com/en/6.0/
 
 # Create virtual environment to use package versions relevant to the project instead of installing these system-wide
-To create: $ python -m venv my_env
+To create: $ python3 -m venv my_env
 To run: $ source my_env/bin/activate
 To deactivate: $ deactivate
 
 # Install Django
 Documentation: https://docs.djangoproject.com/en/6.0/topics/install/#installing-official-release
-$ python -m pip install Django
+$ python3 -m pip install Django
 
 # Check that installation has been successful
 $ python
 >>> import django
 >>> django.get_version()
 NOTE: if the output of the django version is not the latest official version:
--- check the python version
+-- check the python version: $ python3 not $ python
 -- reinstall everything again, if necessary
 -- to delete a directory with all files: $ rm -r directory_name
 
