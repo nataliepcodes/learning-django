@@ -29,3 +29,7 @@ $ python manage.py migrate
 # Run the development server
 $ python manage.py runserver
 To quit the server: $ CTRL+C
+
+# Create a .gitignore within the project directory and list files to be ignored
+$ touch .gitignore
+Reference: https://www.w3schools.com/GIT/git_ignore.asp?remote=bitbucket 
