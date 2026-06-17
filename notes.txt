@@ -13,8 +13,19 @@ $ python3 -m pip install Django
 $ python
 >>> import django
 >>> django.get_version()
+'6.0.6'
 NOTE: if the output of the django version is not the latest official version:
--- check the python version: $ python3 not $ python
+-- check the python version: $ python3 and $ python
 -- reinstall everything again, if necessary
 -- to delete a directory with all files: $ rm -r directory_name
 
+# Creating a project
+$ django-admin startproject mysite
+
+# The below commands will create the initial database tables for the initial application
+$ cd mysite
+$ python manage.py migrate 
+
+# Run the development server
+$ python manage.py runserver
+To quit the server: $ CTRL+C
