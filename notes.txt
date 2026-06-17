@@ -1,0 +1,7 @@
+# Documentation
+https://docs.djangoproject.com/en/6.0/
+
+# Create virtual environment to use package versions relevant to the project instead of installing these system-wide
+To create: python -m venv my_env
+To run: source my_env/bin/activate
+To deactivate: deactivate
