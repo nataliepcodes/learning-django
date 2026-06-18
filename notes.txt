@@ -33,3 +33,8 @@ To quit the server: $ CTRL+C
 # Create a .gitignore within the project directory and list files to be ignored
 $ touch .gitignore
 Reference: https://www.w3schools.com/GIT/git_ignore.asp?remote=bitbucket 
+
+# Project vs application
+In Django the website would be a project, and the applications are some parts of the website - e.g. blog, wiki, or forum.
+The applications can be used by other projects
+To create a blog application: python manage.py startapp blog
