@@ -35,12 +35,20 @@ $ touch .gitignore
 Reference: https://www.w3schools.com/GIT/git_ignore.asp?remote=bitbucket 
 
 # Project vs application
-In Django the website would be a project, and the applications are some parts of the website - e.g. blog, wiki, or forum.
+In Django a website would be called a project. 
+Applications are some parts of the website - e.g. blog, wiki, or forum.
 The applications can be used by other projects
-To create a blog application: python manage.py startapp blog
+To create a Blog application: python manage.py startapp blog
 
 # Data Models
 Model is a Python class that subclasses django.db.models.Model where each attribute is a database field
 A table is created for each model in models.py file
 Djago provides various fields for data models: https://docs.djangoproject.com/en/6.0/ref/models/fields/
 Custome model fields can also be created: https://docs.djangoproject.com/en/6.0/howto/custom-model-fields/
+
+# Activate the application
+Django needs to create the database tables for models and to track the application. 
+For that - the application needs to be activated
+To activate:
+-- edit settings.py file by adding blog.apps.BlogConfig to the INSTALLED_APPS
+
