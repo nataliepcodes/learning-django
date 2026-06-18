@@ -52,3 +52,10 @@ For that - the application needs to be activated
 To activate:
 -- edit settings.py file by adding blog.apps.BlogConfig to the INSTALLED_APPS
 
+# Create a database table for the Model
+!!Reminder!!: In Django a Website is a Project, a Blog is an App, a Blog Post is a data Model
+1) Create initial migration for the Post data model, in the root dir: $ python manage.py makemigrations blog
+2) Run this to inspect the output: $ python manage.py sqlmigrate blog 0001
+3) Sync the db with the new data model:$ python manage.py migrate
+
+
