@@ -55,6 +55,9 @@ To activate:
 # Create a database table for the Model
 !!Reminder!!: In Django a Website is a Project, a Blog is an App, a Blog Post is a data Model
 1) Create initial migration for the Post data model, in the root dir: $ python manage.py makemigrations blog
+^^ for migration to work, ensure that the app is activate, otherwise I will get an error: 0001_initial.py
+^^ when the initial migration is done, a file is created in the blog directory, the file is called 0001_initial.py
+^^ 0001_initial.py specified dependencies and operations within the Migration class
 2) Run this to inspect the output: $ python manage.py sqlmigrate blog 0001
 3) Sync the db with the new data model:$ python manage.py migrate
 
