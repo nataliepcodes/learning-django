@@ -69,6 +69,15 @@ INSTALLED_APPS already includes django.contrib.admin
 1-2) Start development server: $ python manage.py runserver
 1-3) Open: http://127.0.0.1:8000/admin
 1-4) Log in and Be super happy that it all worked well :)
+1-5)Group and User models in the admin page are located in django.contrib.auth
+2) Add model(s) to the administration site:
+2-1) Edit admin.py with the below code:
+    from django.contrib import admin
+    from .models import Post
+    admin.site.register(Post)
+2-2) Refresh http://127.0.0.1:8000/admin and the Blog part with the Post template would appear 
+2-3) Open the Post template: the form will be there with form fields, all ready to fill in. Data is from mysite/blog/models.py
+!!Action!!: check where the buttons are coming from -> "Save and add another", "Save and continue editing", "SAVE"
 
 
 
