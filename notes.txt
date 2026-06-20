@@ -76,8 +76,12 @@ INSTALLED_APPS already includes django.contrib.admin
     from .models import Post
     admin.site.register(Post)
 2-2) Refresh http://127.0.0.1:8000/admin and the Blog part with the Post template would appear 
-2-3) Open the Post template: the form will be there with form fields, all ready to fill in. Data is from mysite/blog/models.py
-!!Action!!: check where the buttons are coming from -> "Save and add another", "Save and continue editing", "SAVE"
+2-3) Open the Post template: the form will be there with form fields, all ready to fill in. 
+-- Form datafields are from Post class located in mysite/blog/models.py
+-- Form save buttons "Save and add another", "Save and continue editing", "SAVE" are out-of-the box buttons from Django admin interface - ModelAdmin.save_as and ModelAdmin.save_as_continue
+https://docs.djangoproject.com/en/dev/ref/contrib/admin/#overriding-admin-templates
+The buttons can be overriden, e.g.
+https://stackoverflow.com/questions/13101281/in-django-admin-how-can-i-hide-save-and-continue-and-save-and-add-another-butto
 
 
 
