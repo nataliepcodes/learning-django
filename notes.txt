@@ -83,6 +83,17 @@ https://docs.djangoproject.com/en/dev/ref/contrib/admin/#overriding-admin-templa
 The buttons can be overriden, e.g.
 https://stackoverflow.com/questions/13101281/in-django-admin-how-can-i-hide-save-and-continue-and-save-and-add-another-butto
 
+# Customizing how models data is displayed in administration dashboard
+Custom classes can be created to customize the dashboard.
+To customize: update the admin.py
+Add: @admin.register(Post) and relevant classes and attributes 
+e.g. page 19 of the Django 3 by Example book
+More examples how to customize dashboard: 
+https://testdriven.io/blog/customize-django-admin/
+https://docs.djangoproject.com/en/6.0/ref/contrib/admin/
+youtube: https://www.youtube.com/watch?v=YN_iUb3R5Cs
+
+
 
 
 
