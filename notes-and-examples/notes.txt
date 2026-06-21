@@ -98,6 +98,14 @@ If a file is added but not committed - to remove from staging: $ git reset
 For all modified files to be committed, incl. files that moved to another directory and need to be deleted from old location on GitHub: $ git add .
 To quit the server: $ CTRL+C
 
+# Database management
+Django comes with db abstraction API which helps to create, retrieve, delete and update objects
+ORM/Object-Relational-Mapper is compatible with MySQL, PostgreSQL, SQLite, Oracle and MariaDB
+Django ORM is based on QuerySets that are requeries to get objects from the database
+Database for the project can be identified in settings.py under DATABASES
+DOCS:
+https://docs.djangoproject.com/en/6.0/ref/models/
+https://docs.djangoproject.com/en/6.0/topics/db/models/
 
 
 
