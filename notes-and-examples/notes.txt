@@ -106,8 +106,12 @@ Database for the project can be identified in settings.py under DATABASES
 DOCS:
 https://docs.djangoproject.com/en/6.0/ref/models/
 https://docs.djangoproject.com/en/6.0/topics/db/models/
-
-
-
+"objects" is a default manager of each model. "object" gets all objects in the database. it can be customised in models.py
+To retrieve objects: Post.objects.all()
+To filter: Post.objects.filter(publish_year=2026, author='admin')
+To exlude: Post.objects.filter(publish_year=2026).exclude(title_startswith='Who')
+To delete: 
+>>> post = Post.objects.get(id=8)
+>>> post.delete()
 
 
