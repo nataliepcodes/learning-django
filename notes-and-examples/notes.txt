@@ -115,3 +115,12 @@ To delete:
 >>> post.delete()
 
 
+# Building views of blog application
+In Django a view is a Python function. It receives a web request and returns a web response.
+'View' contains the logic of the response. It renders a template with variables passed to it. 
+The view returns HTTP response together with the rendered output. The views are created in views.py inside blog post application
+Steps:
+-- Create application views
+-- Define URL pattern for each view
+-- Create HTML templates to render data that views generate
+
