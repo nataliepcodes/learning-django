@@ -125,5 +125,6 @@ Steps:
     * URL patterns is made of a string patter, a view and as an option a name that can be used across the whole project
     * Django runs through each URL pattern, if requested URL matches then it stops at that URL
     * After that, "Django imports the view of the matching URL pattern, executes it, passes an instance of HttpRequest class and the keyword or positional argument" (p.28)
+    * Canonical URLs are used as the main URL for the model (e.g. Blog post), get_absolute_url() are added to the model
 -- Create HTML templates to render data that views generate
 
