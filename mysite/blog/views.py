@@ -4,9 +4,7 @@ from .models import Post
 # A view to retrieve all published posts
 def post_list(request):
     posts = Post.published.all()
-    return render(request, 
-                  'blog/post/list.html', 
-                  {'posts': posts})
+    return render(request,'blog/post/list.html',{'posts': posts})
 
 
 # A view to display a single post
