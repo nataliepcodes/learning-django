@@ -2,6 +2,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 # Custom models manager to retrieve models from a database
@@ -28,6 +29,10 @@ class Post(models.Model):
 
     objects = models.Manager() # Default models manager
     published = PublishedManager() # Custom models manager
+
+    # Canonical URL to be used in templates for linking to specific blog posts
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[self.publish.year, self.publish.month, self.publish.day, self.slug])
 
     class Meta:
         ordering = ('-publish',)
