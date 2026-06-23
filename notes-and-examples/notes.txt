@@ -122,5 +122,8 @@ The view returns HTTP response together with the rendered output. The views are 
 Steps:
 -- Create application views
 -- Define URL pattern for each view
+    * URL patterns is made of a string patter, a view and as an option a name that can be used across the whole project
+    * Django runs through each URL pattern, if requested URL matches then it stops at that URL
+    * After that, "Django imports the view of the matching URL pattern, executes it, passes an instance of HttpRequest class and the keyword or positional argument" (p.28)
 -- Create HTML templates to render data that views generate
 
