@@ -127,4 +127,15 @@ Steps:
     * After that, "Django imports the view of the matching URL pattern, executes it, passes an instance of HttpRequest class and the keyword or positional argument" (p.28)
     * Canonical URLs are used as the main URL for the model (e.g. Blog post), get_absolute_url() are added to the model
 -- Create HTML templates to render data that views generate
+    * templates structure:
+    templates/
+        blog/
+        base.html
+            post/
+                list.html
+                detail.html
+    * templates are written in HTML and Django templates language
+    https://docs.djangoproject.com/en/6.0/ref/templates/language/
+    
+
 
