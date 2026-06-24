@@ -143,3 +143,7 @@ Django has a built-in class for pagination
 - create pagination.html in the blog app templates directory
 - include pagination.html in the blog/post/list.html
 
+# Class-based views
+This is another way to implement views. Instead of functions, these will be implemented as Python objects.
+More info: https://docs.djangoproject.com/en/6.0/topics/class-based-views/
+
