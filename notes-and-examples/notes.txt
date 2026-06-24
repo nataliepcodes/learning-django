@@ -141,4 +141,5 @@ Steps:
 Django has a built-in class for pagination
 - update post_list class in views.py
 - create pagination.html in the blog app templates directory
+- include pagination.html in the blog/post/list.html
 
