@@ -136,6 +136,9 @@ Steps:
                 detail.html
     * templates are written in HTML and Django templates language
     https://docs.djangoproject.com/en/6.0/ref/templates/language/
-    
 
+# Adding pagination
+Django has a built-in class for pagination
+- update post_list class in views.py
+- create pagination.html in the blog app templates directory
 
