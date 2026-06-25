@@ -147,3 +147,8 @@ Django has a built-in class for pagination
 This is another way to implement views. Instead of functions, these will be implemented as Python objects.
 More info: https://docs.djangoproject.com/en/6.0/topics/class-based-views/
 
+# Feature: Share posts by email
+- Create a form to fill in which includes name, email, recipient email and any comments
+- Create view in views.py. This will take care of the input data and sending the email
+- Add a URL pattern - blog/urls.py
+- Create a template. It will display the form or a message when an email is sent
