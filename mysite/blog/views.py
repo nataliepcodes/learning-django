@@ -35,7 +35,7 @@ def post_detail(request, year, month, day, post):
 # A view to share a post by email
 def post_share(request, post_id):
     # Retrieve post by id
-    post = get_object_or_404(Post,id=post_id, status='published')
+    post = get_object_or_404(Post, id=post_id, status='published')
 
     if request.method == 'POST':
         # Form was submitted
