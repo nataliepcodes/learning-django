@@ -1,0 +1,233 @@
+# Official Documentation: https://docs.djangoproject.com/en/6.0/
+
+# Create virtual environment to use package versions relevant to the project instead of installing these system-wide
+To create: $ python3 -m venv my_env
+To run: $ source my_env/bin/activate
+To deactivate: $ deactivate
+
+# Install Django
+Documentation: https://docs.djangoproject.com/en/6.0/topics/install/#installing-official-release
+$ python3 -m pip install Django
+
+# Check that installation has been successful
+$ python
+>>> import django
+>>> django.get_version()
+'6.0.6'
+NOTE: if the output of the django version is not the latest official version:
+-- check the python version: $ python3 and $ python
+-- reinstall everything again, if necessary
+-- to delete a directory with all files: $ rm -r directory_name
+
+# Creating a project
+$ django-admin startproject mysite
+
+# The below commands will create the initial database tables for the initial application
+$ cd mysite
+$ python manage.py migrate 
+
+# Run the development server
+$ python manage.py runserver
+To quit the server: $ CTRL+C
+
+# Create a .gitignore within the project directory and list files to be ignored
+$ touch .gitignore
+Reference: https://www.w3schools.com/GIT/git_ignore.asp?remote=bitbucket 
+
+# Project vs application
+In Django a website would be called a project. 
+Applications are some parts of the website - e.g. blog, wiki, or forum.
+The applications can be used by other projects
+To create a Blog application: python manage.py startapp blog
+
+# Data Models
+Model is a Python class that subclasses django.db.models.Model where each attribute is a database field
+A table is created for each model in models.py file
+Djago provides various fields for data models: https://docs.djangoproject.com/en/6.0/ref/models/fields/
+Custome model fields can also be created: https://docs.djangoproject.com/en/6.0/howto/custom-model-fields/
+
+# Activate the application
+Django needs to create the database tables for models and to track the application. 
+For that - the application needs to be activated
+To activate:
+-- edit settings.py file by adding blog.apps.BlogConfig to the INSTALLED_APPS
+
+# Create a database table for the Model
+!!Reminder!!: In Django a Website is a Project, a Blog is an App, a Blog Post is a data Model
+1) Create initial migration for the Post data model, in the root dir: $ python manage.py makemigrations blog
+^^ for migration to work, ensure that the app is activated, otherwise I will get an error: No installed app with label 'blog'.
+^^ when the initial migration is done, a file is created in the blog directory, the file is called 0001_initial.py
+^^ 0001_initial.py specifies dependencies and operations within the Migration class
+2) Run this to inspect the output: $ python manage.py sqlmigrate blog 0001
+3) Sync the db with the new data model: $ python manage.py migrate
+
+# Creating administration site to manage blog posts
+Django has a build-in admin interface, use out of box or can be configured to suit
+INSTALLED_APPS already includes django.contrib.admin
+1) Creating a superuser who will manage the admin site: 
+1-1) $ python manage.py createsuperuser
+1-2) Start development server: $ python manage.py runserver
+1-3) Open: http://127.0.0.1:8000/admin
+1-4) Log in and Be super happy that it all worked well :)
+1-5)Group and User models in the admin page are located in django.contrib.auth
+2) Add model(s) to the administration site:
+2-1) Edit admin.py with the below code:
+    from django.contrib import admin
+    from .models import Post
+    admin.site.register(Post)
+2-2) Refresh http://127.0.0.1:8000/admin and the Blog part with the Post template would appear 
+2-3) Open the Post template: the form will be there with form fields, all ready to fill in. 
+-- Form datafields are from Post class located in mysite/blog/models.py
+-- Form save buttons "Save and add another", "Save and continue editing", "SAVE" are out-of-the box buttons from Django admin interface - ModelAdmin.save_as and ModelAdmin.save_as_continue
+https://docs.djangoproject.com/en/dev/ref/contrib/admin/#overriding-admin-templates
+The buttons can be overriden, e.g.
+https://stackoverflow.com/questions/13101281/in-django-admin-how-can-i-hide-save-and-continue-and-save-and-add-another-butto
+
+# Customizing how models data is displayed in administration dashboard
+Custom classes can be created to customize the dashboard.
+To customize: update the admin.py
+Add: @admin.register(Post) and relevant classes and attributes 
+e.g. page 19 of the Django 3 by Example book
+More examples how to customize dashboard: 
+https://testdriven.io/blog/customize-django-admin/
+https://docs.djangoproject.com/en/6.0/ref/contrib/admin/
+youtube: https://www.youtube.com/watch?v=YN_iUb3R5Cs
+
+# Useful commands
+If a file is added but not committed - to remove from staging: $ git reset
+For all modified files to be committed, incl. files that moved to another directory and need to be deleted from old location on GitHub: $ git add .
+To quit the server: $ CTRL+C
+
+# Database management
+Django comes with db abstraction API which helps to create, retrieve, delete and update objects
+ORM/Object-Relational-Mapper is compatible with MySQL, PostgreSQL, SQLite, Oracle and MariaDB
+Django ORM is based on QuerySets that are requeries to get objects from the database
+Database for the project can be identified in settings.py under DATABASES
+DOCS:
+https://docs.djangoproject.com/en/6.0/ref/models/
+https://docs.djangoproject.com/en/6.0/topics/db/models/
+"objects" is a default manager of each model. "object" gets all objects in the database. it can be customised in models.py
+To retrieve objects: Post.objects.all()
+To filter: Post.objects.filter(publish_year=2026, author='admin')
+To exlude: Post.objects.filter(publish_year=2026).exclude(title_startswith='Who')
+To delete: 
+>>> post = Post.objects.get(id=8)
+>>> post.delete()
+
+
+# Building views of blog application
+In Django a view is a Python function. It receives a web request and returns a web response.
+'View' contains the logic of the response. It renders a template with variables passed to it. 
+The view returns HTTP response together with the rendered output. The views are created in views.py inside blog post application
+Steps:
+-- Create application views
+-- Define URL pattern for each view
+    * URL patterns is made of a string patter, a view and as an option a name that can be used across the whole project
+    * Django runs through each URL pattern, if requested URL matches then it stops at that URL
+    * After that, "Django imports the view of the matching URL pattern, executes it, passes an instance of HttpRequest class and the keyword or positional argument" (p.28)
+    * Canonical URLs are used as the main URL for the model (e.g. Blog post), get_absolute_url() are added to the model
+-- Create HTML templates to render data that views generate
+    * templates structure:
+    templates/
+        blog/
+        base.html
+            post/
+                list.html
+                detail.html
+    * templates are written in HTML and Django templates language
+    https://docs.djangoproject.com/en/6.0/ref/templates/language/
+
+# Adding pagination
+Django has a built-in class for pagination
+- update post_list class in views.py
+- create pagination.html in the blog app templates directory
+- include pagination.html in the blog/post/list.html
+
+# Class-based views
+This is another way to implement views. Instead of functions, these will be implemented as Python objects.
+More info: https://docs.djangoproject.com/en/6.0/topics/class-based-views/
+
+------------------------------------------
+# BLOG FEATURE: Share posts by email
+- Create a form to fill in which includes name, email, recipient email and any comments
+- Create view in views.py. This will take care of the input data and sending the email
+- Add a URL pattern - blog/urls.py
+- Create a template. It will display the form or a message when an email is sent (share.html)
+- Edit blog/post/detail.html to add a link to share a post URL
+- To receive an email set up an actual smpt server configuration / not a console backend
+------------------------------------------
+
+>> How to send emails with Django?
+Option 1: Have a local SMTP server, or 
+
+Option 2: Add the below external SMTP server configuration into the settings.py
+EMAIL_HOST:localhost
+EMAIL_PORT: 587
+EMAIL_HOST_USER: 'SMTP server username'
+EMAIL_HOST_PASSWORD: 'SMTP server password'
+EMAIL_USE_TLS: True or False
+or
+EMAIL_USE_SSL: True or False
+
+Option 3: If SMTP server can't be used, emails can be written to console, add below to settings.py
+# Write emails to the console (without SMTP) for TESTING
+EMAIL_BACKEND = "django.core.email.backends.console.EmailBackend"
+
+Option 4: Use SMTP server of the email sevice provider, this can be configured, for example, via a Google account
+
+https://www.sitepoint.com/django-send-email/
+https://docs.djangoproject.com/en/6.0/topics/email/
+
+>> How to test email?
+SHELL
+1. run Django shell: $ python manage.py shell
+2. paste below:
+from django.core.mail import send_mail
+
+send_mail(
+    "Test Subject",
+    "This is a test email.",
+    "from@example.com",
+    ["to@example.com"],
+)
+
+FILE
+import os
+import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+django.setup()
+
+from django.core.mail import send_mail
+
+send_mail(
+    "Test Subject",
+    "This is a test email.",
+    "from@example.com",
+    ["to@example.com"],
+)
+
+
+------------------------------------------
+# BLOG FEATURE: Adding comments to a post
+- Create model to save comments
+- Build a form to submit comments
+- Create a view to process the form and save data to database
+- Edit post detail template to display comments
+------------------------------------------
+
+------------------------------------------
+# BLOG FEATURE: Tagging posts
+- 
+-
+-
+-
+------------------------------------------
+
+------------------------------------------
+# BLOG FEATURE: Recommending similar posts
+- 
+-
+-
+-
+------------------------------------------
