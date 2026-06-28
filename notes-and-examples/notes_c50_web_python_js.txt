@@ -1,6 +1,10 @@
 CS50W, CS50's Web Programming with Python and JavaScript
 
 Lecture 0: HTML and CSS 
+Source: https://youtu.be/zFZrkCIc2Oc?si=-S8Z3HQ31SPf1Tkh
+HTML: describes the structure of the web page
+CSS: describes style of the web page - colours and fonts, layouts and spacing
+
 Lecture 1: Git
 Lecture 2: Python
 Lecture 3: Django
