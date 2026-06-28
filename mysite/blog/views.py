@@ -45,15 +45,12 @@ def post_detail(request, year, month, day, post):
             new_comment.post = post
             # Save the comment to the database
             new_comment.save()
-        else:
-            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
                 
     return render(request, 
                   'blog/post/detail.html',
-                  {'post': post,
-                   'comments': comments,
-                   'new_comment': new_comment,
-                   'comment_form': comment_form})
+                  {'post': post,'comments': comments,'new_comment': new_comment,'comment_form': comment_form})
 
 # A view to share a post by email
 def post_share(request, post_id):
