@@ -151,7 +151,8 @@ More info: https://docs.djangoproject.com/en/6.0/topics/class-based-views/
 - Create a form to fill in which includes name, email, recipient email and any comments
 - Create view in views.py. This will take care of the input data and sending the email
 - Add a URL pattern - blog/urls.py
-- Create a template. It will display the form or a message when an email is sent
+- Create a template. It will display the form or a message when an email is sent (share.html)
+- Edit blog/post/detail.html to add a link to share a post URL
 
 >> How to send emails with Django?
 Option 1: Have a local SMTP server, or 
