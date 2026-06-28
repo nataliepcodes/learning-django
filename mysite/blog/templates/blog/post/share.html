@@ -6,11 +6,11 @@
     {% if sent %}
         <h1>E-mail successfully sent</h1>
         <p>
-         "{{ post.title }}" was successfullt sent to {{ form.cleaned_data.to }}.
+         "{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.
          </p>
     {% else %}
         <h1>Share "{{ post.title }}" by email </h1>
-        <form method="post>
+        <form method="post">
             {{ form.as_p }}
             <!-- csrf token is a hidden field that autogenerates a token to avoid Cross-Site Request Forgery attacks -->
             {% csrf_token %}
