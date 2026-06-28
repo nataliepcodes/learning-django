@@ -147,22 +147,26 @@ Django has a built-in class for pagination
 This is another way to implement views. Instead of functions, these will be implemented as Python objects.
 More info: https://docs.djangoproject.com/en/6.0/topics/class-based-views/
 
-# Feature: Share posts by email
+------------------------------------------
+# BLOG FEATURE: Share posts by email
 - Create a form to fill in which includes name, email, recipient email and any comments
 - Create view in views.py. This will take care of the input data and sending the email
 - Add a URL pattern - blog/urls.py
 - Create a template. It will display the form or a message when an email is sent (share.html)
 - Edit blog/post/detail.html to add a link to share a post URL
+- To receive an email set up an actual smpt server configuration / not a console backend
+------------------------------------------
 
 >> How to send emails with Django?
 Option 1: Have a local SMTP server, or 
 
 Option 2: Add the below external SMTP server configuration into the settings.py
 EMAIL_HOST:localhost
-EMAIL_PORT: 25
+EMAIL_PORT: 587
 EMAIL_HOST_USER: 'SMTP server username'
 EMAIL_HOST_PASSWORD: 'SMTP server password'
 EMAIL_USE_TLS: True or False
+or
 EMAIL_USE_SSL: True or False
 
 Option 3: If SMTP server can't be used, emails can be written to console, add below to settings.py
@@ -202,3 +206,28 @@ send_mail(
     "from@example.com",
     ["to@example.com"],
 )
+
+
+------------------------------------------
+# BLOG FEATURE: Adding comments to a post
+- Create model to save comments
+- Build a form to submit comments
+- Create a view to process the form and save data to database
+- Edit post tedail template to display comments
+------------------------------------------
+
+------------------------------------------
+# BLOG FEATURE: Tagging posts
+- 
+-
+-
+-
+------------------------------------------
+
+------------------------------------------
+# BLOG FEATURE: Recommending similar posts
+- 
+-
+-
+-
+------------------------------------------
