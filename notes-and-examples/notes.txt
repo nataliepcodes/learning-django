@@ -213,7 +213,7 @@ send_mail(
 - Create model to save comments
 - Build a form to submit comments
 - Create a view to process the form and save data to database
-- Edit post tedail template to display comments
+- Edit post detail template to display comments
 ------------------------------------------
 
 ------------------------------------------
