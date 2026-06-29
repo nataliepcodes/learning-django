@@ -1,15 +1,80 @@
 CS50W, CS50's Web Programming with Python and JavaScript
 
+---------------------------------------------------------
 Lecture 0: HTML and CSS 
 Source: https://youtu.be/zFZrkCIc2Oc?si=-S8Z3HQ31SPf1Tkh
 HTML: describes the structure of the web page
-CSS: describes style of the web page - colours and fonts, layouts and spacing
+CSS: describes style of the web page - colours, fonts, layouts and spacing
+DOM: Document Object Model 
+       html
+    |        |
+  head      body
+    |        |
+  title  Hello. world!
+    |
+ Homepage
 
+Headings: h1, h2, h3, h4, h5, h6
+Lists: 
+    Ordered <ol>
+                <li>One</li>
+            </ol> 
+    Unordered <ul>
+                <li>One</li>
+              </ul>
+Image: <img src="cat.jpg" alt="Cat" width="300">
+Link: <a href="https://google.com">Click here</a>
+Tables, Form, Datalist 
+
+Inline Styling:
+<h1 style="colour: blue; text-align=left;">Text</h1>
+
+In<head> Styling
+<style>
+    h1 {
+        colour: blue;
+        text-align=left;
+    }
+</style>
+
+Separate-file Styling
+File: styles.css
+Link in <head> of html: <link rel="stylesheet" href="styles.css">
+
+Division tag to divide into sections: <div></div>
+Size:
+div {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+Padding: space inside of the element 
+Margin: space outside of the element
+
+Style by ID - name to HTML element that is unique
+id="foo" within the html tag
+#foo in styles.css
+
+Style by Class - name to HTML element that is not unique
+class="baz" within the html tag
+.baz in in styles.css
+
+Specificity in order of precedence: inline, id, class, type
+
+---------------------------------------------------------
 Lecture 1: Git
+---------------------------------------------------------
 Lecture 2: Python
+---------------------------------------------------------
 Lecture 3: Django
+---------------------------------------------------------
 Lecture 4: SQL, Models and Migrations
+---------------------------------------------------------
 Lecture 5: JavaScript
+---------------------------------------------------------
 Lecture 6: User Interfaces
+---------------------------------------------------------
 Lecture 7: Testing and CI/CD
+---------------------------------------------------------
 Lecture 8: Scalability and Security
+---------------------------------------------------------
