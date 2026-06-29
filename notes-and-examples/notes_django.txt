@@ -218,10 +218,11 @@ send_mail(
 
 ------------------------------------------
 # BLOG FEATURE: Tagging posts
-- 
--
--
--
+- Use 3rd party app called django-taggit
+- Source code: https://github.com/jazzband/django-taggit
+- pip install django-taggit
+- Add taggit to settings.py
+- Update models.py by importing TaggableManager and adding tags variable to the Post class
 ------------------------------------------
 
 ------------------------------------------
