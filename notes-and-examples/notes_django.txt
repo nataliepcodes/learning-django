@@ -226,6 +226,9 @@ send_mail(
 - Create migration for model changes: python manage.py makemigrations blog
 - Create db tables: python manage.py migrate
 - Display tags: edit blog/post/list.html
+- Edit post_list in views.py to let users list all posts tagged with a specific tag
+- Add tag URL pattern to urls.py
+- Edit blog/post/list.html to add tag filtering option, and update pagination
 ------------------------------------------
 
 ------------------------------------------
