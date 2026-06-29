@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 # Custom models manager to retrieve models from a database
@@ -29,6 +30,9 @@ class Post(models.Model):
 
     objects = models.Manager() # Default models manager
     published = PublishedManager() # Custom models manager
+
+    # Add tags manager to add, retrieve, remove tags from Post objects
+    tags = TaggableManager()
 
     # Canonical URL to be used in templates for linking to specific blog posts
     def get_absolute_url(self):
