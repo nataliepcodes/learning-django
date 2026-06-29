@@ -225,6 +225,7 @@ send_mail(
 - Update models.py by importing TaggableManager and adding tags variable to the Post class
 - Create migration for model changes: python manage.py makemigrations blog
 - Create db tables: python manage.py migrate
+- Display tags: edit blog/post/list.html
 ------------------------------------------
 
 ------------------------------------------
