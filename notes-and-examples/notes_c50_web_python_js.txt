@@ -61,6 +61,27 @@ class="baz" within the html tag
 
 Specificity in order of precedence: inline, id, class, type
 
+Responsive design:
+- viewport
+- Media Queries
+- Flexbox
+- Grids
+Bootstrap CSS library: https://getbootstrap.com/
+
+Sass, extension of CSS, can create variables in this language, to reduce repetition
+- filename.scss
+- needs to be compiled/translated to css for browsers to understand, then reference file as .css:
+- to compile: sass filename.css:filename.css
+- variables:
+$ color: red; << variable called color is styled red
+ul {
+    font-size: 10px;
+    color: $color;
+}
+- Monitor without compiling: $ sass --watch filename.scss:filename.css
+- Sass can nest css selectors inside css selectors
+- Sass provides inheritance feature of css selectors
+
 ---------------------------------------------------------
 Lecture 1: Git
 ---------------------------------------------------------
