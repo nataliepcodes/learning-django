@@ -5,6 +5,23 @@
 
 {% block content %}
   <h1>My blog</h1>
+
+  {% if tag %}
+    <h2>Posts tagged with "{{ tag.name }}"</h2>
+  {% endif %}
+
+  <p class="tags">
+    Tags:
+    <!-- Loop through all tags of a post and display a custom link - to filter posts by that tag -->
+    {% for tag in post.tags.all %}
+      <a href="{% url 'blog:post_list_by_tag' tag.slug %}">
+        {{ tag.name }}
+      </a>
+      <!-- Tags are separated by commas. 'if forloop.last' allows to test if the loop is on its last iteration -->
+      {% if not forloop.last %}, {% endif %}
+    {% endfor %}
+  </p>
+
   {% for post in posts %}
     <h2>
       <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
