@@ -237,3 +237,27 @@ send_mail(
 - Edit view.py with relevant code for similar posts
 - Edit blog/post/details.html to add a section for recommending similar posts
 ------------------------------------------
+
+------------------------------------------
+# BLOG FEATURE: Create custom template tags and filters
+- 
+-
+-
+-
+------------------------------------------
+
+------------------------------------------
+# BLOG FEATURE: Adding a sitemap and post feed
+- 
+-
+-
+-
+------------------------------------------
+
+------------------------------------------
+# BLOG FEATURE: Full-text search with PostgreSQL
+- 
+-
+-
+-
+------------------------------------------
