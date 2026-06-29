@@ -233,8 +233,7 @@ send_mail(
 
 ------------------------------------------
 # BLOG FEATURE: Recommending similar posts
-- 
--
--
--
+- Edit view.py to add Count function that can perform maths on tags - count etc
+- Edit view.py with relevant code for similar posts
+- Edit blog/post/details.html to add a section for recommending similar posts
 ------------------------------------------
