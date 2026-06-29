@@ -1,7 +1,6 @@
 {% extends "blog/base.html" %} 
 
 {% block title %} My blog {% endblock %} 
-<p class="tags">Tags: {{ post.tags.all|join:", "}}</p>
 
 {% block content %}
   <h1>My blog</h1>
@@ -11,7 +10,7 @@
   {% endif %}
 
   <p class="tags">
-    Tags:
+    Tags*:
     <!-- Loop through all tags of a post and display a custom link - to filter posts by that tag -->
     {% for tag in post.tags.all %}
       <a href="{% url 'blog:post_list_by_tag' tag.slug %}">
@@ -26,6 +25,8 @@
     <h2>
       <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
     </h2>
+    <!-- Display tags under the post title -->
+    <p class="tags">Tags: {{ post.tags.all|join:", "}}</p>
     <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
     {{ post.body|truncatewords:30|linebreaks }} 
   {% endfor %} 
