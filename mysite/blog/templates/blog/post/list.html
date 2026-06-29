@@ -26,7 +26,15 @@
       <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
     </h2>
     <!-- Display tags under the post title -->
-    <p class="tags">Tags: {{ post.tags.all|join:", "}}</p>
+    {% if post.tags.all %}
+      <p class="tags">
+        Tags: 
+        {% for tag in post.tags.all %}
+          {{ tag.name }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+      </p>
+    {% endif %}
+
     <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
     {{ post.body|truncatewords:30|linebreaks }} 
   {% endfor %} 
