@@ -19,7 +19,7 @@
     {% if post.tags.all %}
       <p class="tags">
         Tags: 
-        <!-- Loop through all tags of a post and display a custom link - to filter posts by that tag -->
+        <!-- Loop through all tags of a post and display a custom link - to filter posts by that tag when the link is clicked -->
         {% for tag in post.tags.all %}
           <!-- Creats a link to the tag path e.g. http://127.0.0.1:8000/blog/tag/hello/ -->
           <a href="{% url 'blog:post_list_by_tag' tag.slug %}"> 
