@@ -240,10 +240,11 @@ send_mail(
 
 ------------------------------------------
 # BLOG FEATURE: Create custom template tags and filters
-- 
--
--
--
+- Use Django's helper functions 'simple_tag' and 'inclusion_tag' to create custom template tags
+- Custom template tags need to be part of the blog application directory
+- Create a custom tag in a new file blog_tags.py
+- Load tags into the blog/templates/base.html
+- Custom template tags help to process data and to display it as part of the application
 ------------------------------------------
 
 ------------------------------------------
