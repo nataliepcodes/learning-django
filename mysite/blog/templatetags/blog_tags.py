@@ -9,7 +9,7 @@ def total_posts():
     return Post.published.count()
 
 # Display latest posts / Displayed on the blog sidebar
-@register.inclusion_tag('blog/post/latest)posts.html')
+@register.inclusion_tag('blog/post/latest_posts.html')
 def show_latest_posts(count=5):
     latest_posts = Post.published.order_by('-publish')[:count]
-    return {'latest_posts' : latest_posts}
+    return {'latest_posts' : latest_posts} # Data is received from blog/post/latest_posts.html
