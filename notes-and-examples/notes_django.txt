@@ -245,6 +245,7 @@ send_mail(
 - Create a custom tag in a new file blog_tags.py
 - Load tags into the blog/templates/base.html
 - Custom template tags help to process data and to display it as part of the application
+- Django has a variety of pre-build filters {{ variable | my_filter }} e.g. {{ django | capfirst }} # Django
 ------------------------------------------
 
 ------------------------------------------
