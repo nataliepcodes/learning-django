@@ -253,7 +253,7 @@ send_mail(
 - Django has a sitemap framework that creates sitemaps
 - Sitemap is XTML file that shows the search engines the website pages, relevance and update frequency
 - Sitemap helps with site visibility in SEO ranking by helping crawlers to index site content
-- Activate 'sites' and 'sitemaps' in INSTALLED_APPS in settings.py
+- Activate 'sites' and 'sitemaps' in INSTALLED_APPS in settings.py. Add SITE_ID = 1
 - Then $ python manage.py migrate
 - Create sitemaps.py file in the blog directory
 - Add sitemaps URL in urls.py
