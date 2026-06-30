@@ -15,8 +15,8 @@ How it works:
 1. Django will call latest posts show_latest_posts() in blog_tags.py, the data is asked from base.html that is asking for 3 latests posts - {% show_latest_posts 3 %}
 2. show_latest_posts() in the below function will get the latest posts from the Post class and will return/output the data 
 3. The return data will be used in latest_posts.html that is registered in the inclusion tag of show_latest_posts()
-3. latest_posts.html has a loop that iterates over a dictionary of values
-4. What's a link between base.html and latest_posts.html? 
+4. latest_posts.html has a loop that iterates over a dictionary of values
+5. What's a link between base.html and latest_posts.html? 
 - {% show_latest_posts 3 %} in base.html is a shortcut to include another template, in this case latest_posts.html which is inluded at the registration step of show_latest_posts()
 - the show_latest_posts() return data is first processed within the loop in latest_posts.html, then the final result is displayed in the base.html
 """
