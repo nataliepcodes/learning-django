@@ -33,7 +33,7 @@ def show_latest_posts(count=5):
 def get_most_commented_posts(count=5):
     return Post.published.annotate(total_comments=Count('comments')).order_by('-total_comments')[:count]
 
-# A filter to convert markdown text formatting syntax to HTML. Use in templates as {{ variable | markdown }}
+# A filter to use markdown text formatting syntax in the blog post. Use in templates as {{ variable | markdown }}
 @register.filter(name='markdown')
 def markdown_format(text):
     return mark_safe(markdown.markdown(text))
