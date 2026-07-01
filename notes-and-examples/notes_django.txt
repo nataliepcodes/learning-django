@@ -293,4 +293,8 @@ send_mail(
     -- Edit views.py by adding post search function
     -- Create a template to display the form and the results
     -- Edit urls.py by adding the search URL pattern
+- Processing results    
+    -- Stemming is a process to reduce words to their word "stem, base or root phase" - page 88
+    -- PostgreSQL has a ranking function based on frequency of the query term and how close/similar these are
+    -- Edit views.py to SearchQuery and SearchRank
 ------------------------------------------
