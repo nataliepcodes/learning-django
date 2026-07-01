@@ -257,6 +257,7 @@ send_mail(
 - Then $ python manage.py migrate
 - Create sitemaps.py file in the blog directory
 - Add sitemaps URL in urls.py
+- set the domain or host to be used for the site here: http://127.0.0.1:8000/admin/sites/site/
 ------------------------------------------
 
 ------------------------------------------
