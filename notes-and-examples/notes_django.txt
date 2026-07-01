@@ -288,4 +288,9 @@ send_mail(
     !! When changing DB 'ENGINE' from sqlite to PostgreSQL, NOTE that all sqlite db data will disappear from admin view - migrate/backup what's necessary
 - run $ python manage.py migrate
 - python manage.py createsuperuser
+- Building a search view:
+    -- Create a search form in forms.py
+    -- Edit views.py by adding post search function
+    -- Create a template to display the form and the results
+    -- Edit urls.py by adding the search URL pattern
 ------------------------------------------
