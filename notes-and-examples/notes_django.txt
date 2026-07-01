@@ -271,8 +271,12 @@ send_mail(
 
 ------------------------------------------
 # BLOG FEATURE: Full-text search with PostgreSQL
-- 
--
--
--
+- Simple search can be performed with Django ORM 'contains' filter
+- Full-text search requires PostgreSQL
+- install PostgreSQL
+- install psycopg2 PostgreSQL adaptor for Python
+- create user
+- edit settings.py DATABASES
+- run $ python manage.py migrate
+- python manage.py createsuperuser
 ------------------------------------------
