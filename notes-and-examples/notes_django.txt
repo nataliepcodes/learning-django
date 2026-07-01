@@ -284,7 +284,8 @@ send_mail(
     !! check status with \du or \l
     !! CTRL + D to exit. Don't quit - exit and continue :)
 
-- edit settings.py DATABASES
+- edit settings.py DATABASES 
+    !! When changing DB 'ENGINE' from sqlite to PostgreSQL, NOTE that all sqlite db data will disappear from admin view - migrate/backup what's necessary
 - run $ python manage.py migrate
 - python manage.py createsuperuser
 ------------------------------------------
