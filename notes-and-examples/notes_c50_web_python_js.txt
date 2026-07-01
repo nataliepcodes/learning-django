@@ -84,6 +84,17 @@ ul {
 
 ---------------------------------------------------------
 Lecture 1: Git
+- Version control
+- 'git clone <url>' will download the repository into my computer
+- 'cd' = change directory
+- 'git add <filename>' - keep track of the file 
+- 'git commit -m "message"> - save snapshot of changes made in the recent commit
+- 'git push' - publish up to the server(?)/to GitHub
+- 'git status' = current status within the repository
+- 'git pull' - download the latest version from GitHub
+- merge conflicts: fix then commit
+- 'git log' - keeps track of all changes made to the code(34:05)
+
 ---------------------------------------------------------
 Lecture 2: Python
 ---------------------------------------------------------
