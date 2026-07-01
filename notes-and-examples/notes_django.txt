@@ -262,10 +262,11 @@ send_mail(
 
 ------------------------------------------
 # BLOG FEATURE: Creating a post feed
-- 
--
--
--
+- Django has a feed framework to dynamically generate RSS or Atom feeds
+- Web feed - providers users with the most up to date content
+- create feed.py in the blog directory
+- edit blog/urls.py: import LatestPostsFeed
+- add feed subscription link to the blog sidebar in blog/base.html
 ------------------------------------------
 
 ------------------------------------------
