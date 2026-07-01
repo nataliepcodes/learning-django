@@ -273,9 +273,17 @@ send_mail(
 # BLOG FEATURE: Full-text search with PostgreSQL
 - Simple search can be performed with Django ORM 'contains' filter
 - Full-text search requires PostgreSQL
-- install PostgreSQL
-- install psycopg2 PostgreSQL adaptor for Python
-- create user
+- install PostgreSQL >> https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+- install psycopg2 PostgreSQL adaptor for Python >> pip install psycopg2-binary
+- create user (on MacOS):
+    >> psql -U postgres
+    >> Password for user ***
+    !! 'postgres=#' means Successful connection to PostgreSQL
+    >> postgres=# CREATE USER blog WITH PASSWORD 'strongpassword' CREATEDB;
+    >> postgres-# CREATE DATABASE blog OWNER blog;
+    !! check status with \du or \l
+    !! CTRL + D to exit. Don't quit - exit and continue :)
+
 - edit settings.py DATABASES
 - run $ python manage.py migrate
 - python manage.py createsuperuser
