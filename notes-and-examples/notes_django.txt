@@ -304,4 +304,15 @@ send_mail(
         - search_vector = SearchVector('title', 'body')
         - search_query = SearchQuery(query)
         - a query is WHAT we search for, and a vector is WHERE
+- Trigram similarity search
+    -- trigram: grouping of 3 sequential elements
+        > in Linguistics: A sequence of three adjacent letters, symbols, or words in a text (also known as a trigraph or 3-gram)
+        > in Computer Science: In Natural Language Processing (NLP), a 3-letter or 3-word sequence used for text analysis, speech recognition, and spelling correction
+    -- Common Uses:
+        > Search Optimization: The PostgreSQL pg_trgm  databases quickly find misspelled search queries
+        https://www.postgresql.org/docs/current/pgtrgm.html
+        > Predictive Text: A trigram model predicts the probability of the next item based entirely on the two items that came before it
+        https://en.wikipedia.org/wiki/Trigram_search
+    -- install PostgreSQL pg_trgm extention
+    -- edit views.py to include TrigramSimilarity and updated Post search query
 ------------------------------------------
