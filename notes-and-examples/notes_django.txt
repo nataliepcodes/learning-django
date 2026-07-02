@@ -297,4 +297,11 @@ send_mail(
     -- Stemming is a process to reduce words to their word "stem, base or root phase" - page 88
     -- PostgreSQL has a ranking function based on frequency of the query term and how close/similar these are
     -- Edit views.py to SearchQuery and SearchRank
+- What's a Vector?:
+    -- vector has different meanings in programming: dynamically sized array, data structure etc
+    -- https://www.paulox.net/2017/12/22/full-text-search-in-django-with-postgresql/#searchvector
+    -- In simple terms, the SearchVector (in the context of mysite blog project) is where the data is SEARCHED FROM - for example, FROM the body of the text, or FROM the title
+        - search_vector = SearchVector('title', 'body')
+        - search_query = SearchQuery(query)
+        - a query is WHAT we search for, and a vector is WHERE
 ------------------------------------------
