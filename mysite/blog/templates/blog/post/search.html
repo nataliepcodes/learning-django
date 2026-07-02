@@ -16,7 +16,7 @@
             </h4>
             {{ post.body|markdown|truncatewords_html:5 }}
         {% empty %}
-            <p>There are no results for your query</p>
+            <p>There are no results for your query.</p>
         {% endfor %}
     {% else %}
         <h1>Search for posts</h1>
