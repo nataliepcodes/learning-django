@@ -116,7 +116,7 @@ def post_search(request):
             #search_query = SearchQuery(query)
             # Filter results by SearchQuery, use SearchRank to order results. Order by relevancy
             #results = Post.published.annotate(search=search_vector, rank=SearchRank(search_vector, search_query)).filter(search=search_query).order_by('-rank')
-            results = Post.published.annotate(similarity=TrigramSimilarity('title', query),).filter(similarity__gt=0.1).order_by('-similarity')
+            results = Post.published.annotate(similarity=TrigramSimilarity('title', query)).filter(similarity__gt=0.1).order_by('-similarity')
 
     return render(request, 'blog/post/search.html',
                   {'form': form,
