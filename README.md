@@ -6,4 +6,5 @@ Self-teaching Django by:
 - [Code with Mosh 1h Introduction to Django](https://www.youtube.com/watch?v=rHux0gMZ3Eg)
 - following official Django documentation: https://www.djangoproject.com/
 - [CS50W: CS50's Web Programming with Python and JavaScript](https://www.youtube.com/playlist?list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu)
+- [Django girls tutorial](https://tutorial.djangogirls.org/en/)
 - ... other resources will be added as the learning progresses ...
