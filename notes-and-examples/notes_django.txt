@@ -314,5 +314,13 @@ send_mail(
         > Predictive Text: A trigram model predicts the probability of the next item based entirely on the two items that came before it
         https://en.wikipedia.org/wiki/Trigram_search
     -- install PostgreSQL pg_trgm extention
+        Check if 'pg_trgm' exists:
+        1.  BASH: $ python manage.py dbshell
+        2.  SQL: SELECT current_database();
+        3.  SQL: SELECT extname FROM pg_extension WHERE extname = 'pg_trgm';
+        If zero rows, then:
+        1.  BASH: $ python manage.py dbshell
+        2. SQL: CREATE EXTENSION IF NOT EXISTS pg_trgm;
+        3. SQL to verify: SELECT extname FROM pg_extension WHERE extname = 'pg_trgm';
     -- edit views.py to include TrigramSimilarity and updated Post search query
 ------------------------------------------
